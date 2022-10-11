@@ -1,0 +1,36 @@
+@import "antd/dist/antd.css";
+
+$color1: #ff2e65;
+$containerWidth: 1100px;
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+
+  .product__image {
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 100%;
+      max-height: 50%;
+    }
+  }
+
+  .addToCard__btn {
+    background-color: $color1;
+    padding: 4px 24px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .addToCard__btn:hover {
+    box-shadow: 0 0 0 0.05em #ff638d;
+  }
+}
+
+.container {
+  max-width: $containerWidth;
+}

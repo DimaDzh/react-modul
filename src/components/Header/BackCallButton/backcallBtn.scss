@@ -1,0 +1,13 @@
+.call__btn {
+  background-color: #f3f3f7;
+  color: rgba(105, 111, 122, 1);
+}
+
+.phone {
+  .phone__call {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 26px;
+    font-weight: 700;
+  }
+}

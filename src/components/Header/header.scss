@@ -1,0 +1,38 @@
+$color1: #ff2e65;
+$containerWidth: 1100px;
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  .top__header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .down__header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    .menu__list {
+      display: flex;
+
+      .list__item {
+        display: flex;
+        padding: 10px;
+        font-weight: 600;
+      }
+    }
+    .card__btn {
+      background-color: $color1;
+      border: $color1;
+      border-radius: 8px;
+      padding: 7px 24px;
+    }
+  }
+}

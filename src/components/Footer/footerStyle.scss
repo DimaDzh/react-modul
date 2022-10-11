@@ -1,0 +1,82 @@
+.footer {
+  display: flex;
+  background-color: #fff;
+  padding-top: 55px;
+  flex-direction: column;
+
+  .footer__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    .left,
+    .right {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      .list__wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+        .list {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          padding: 0 10px 0 0;
+        }
+      }
+    }
+    .right {
+      margin-left: 55px;
+      h3 {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 35px;
+      }
+      .social__section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .feedback__btn {
+      display: flex;
+      margin: 0;
+      padding: 0 14px 14px 0;
+
+      a {
+        border: 2px solid #e3ecf5;
+        padding: 10px 35px;
+        border-radius: 13px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .icon__list {
+      display: flex;
+    }
+
+    .pay__icon {
+      width: 36px;
+      height: 36px;
+      background-image: url(./assets/icons/image/PayIcons/masteCardIcon.png);
+    }
+
+    .badge__image {
+      width: 310px;
+      height: 245px;
+      background-image: url(./assets/icons/image/tableSuhsi.png);
+    }
+  }
+}
