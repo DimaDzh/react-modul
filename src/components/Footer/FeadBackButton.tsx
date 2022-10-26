@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 interface FeadBackButtonProps {
   children?: React.Component | any;
@@ -6,7 +6,7 @@ interface FeadBackButtonProps {
   link?: string;
 }
 
-const FeadBackButton: React.FC<FeadBackButtonProps> = ({
+const FeadBackButton: FC<FeadBackButtonProps> = ({
   children,
 
   link,

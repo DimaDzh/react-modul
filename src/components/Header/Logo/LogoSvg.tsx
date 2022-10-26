@@ -1,7 +1,7 @@
-import Icon, { HomeOutlined } from "@ant-design/icons";
+import Icon from "@ant-design/icons";
 import type { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
-import { Space } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface LogoProps {
   className?: string;
@@ -66,6 +66,10 @@ const LogotIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={Logo} {...props} />
 );
 
-const LogoSvg: React.FC = () => <LogotIcon />;
+const LogoSvg: React.FC = () => (
+  <Link to="/">
+    <LogotIcon />
+  </Link>
+);
 
 export default LogoSvg;

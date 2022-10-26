@@ -1,6 +1,6 @@
 import { createFromIconfontCN } from "@ant-design/icons";
 import { Space } from "antd";
-import React from "react";
+import React, { FC } from "react";
 
 const IconFont = createFromIconfontCN({
   scriptUrl: [
@@ -9,7 +9,7 @@ const IconFont = createFromIconfontCN({
   ],
 });
 
-const CreateIcon: React.FC = () => (
+const CreateIcon: FC = () => (
   <Space>
     <IconFont type="icon-javascript" />
     <IconFont type="icon-java" />

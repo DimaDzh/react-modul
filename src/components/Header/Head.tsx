@@ -1,16 +1,16 @@
 import React from "react";
 import "./header.scss";
-import { Col, Divider, Row } from "antd";
 import { MenuList } from "./MenuList/MenuList";
 import Logo from "./Logo/Logo";
-import Login from "./Login/Login";
 import BackCallButton from "./BackCallButton/BackCallButton";
 import CardButton from "./Card/CardButton";
-import { mainColor1 } from "../variables/mainColors/mainColor1";
 import PhoneCall from "./BackCallButton/PhoneCall";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const Head: React.FC = () => {
+  const { isAuth, email } = useAuth();
+
   const menuListData = [
     "Меню",
     "Супы",
@@ -25,7 +25,7 @@ const Head: React.FC = () => {
     <div className="header">
       <div className="top__header">
         <Logo />
-        <p>
+        <p className="bage__span">
           Доставка пасты <span>Киев</span>
         </p>
         <BackCallButton />
@@ -34,23 +34,31 @@ const Head: React.FC = () => {
 
       <div className="down__header">
         <MenuList>
-          <ul className="menu__list">
-            <li className="list__item">
-              <Link to="/">Home</Link>
-            </li>
+          <ul className="list">
             <li className="list__item">Menu</li>
             <li className="list__item">Супы</li>
             <li className="list__item">Антипасты</li>
             <li className="list__item">Напитки</li>
             <li className="list__item">Десерты</li>
             <li className="list__item">
-              <Link to="/actions">Акции!</Link>
+              <Link to="/actions" style={{ color: "#000" }}>
+                Акции!
+              </Link>
             </li>
             <li className="list__item">Контакты</li>
           </ul>
         </MenuList>
 
-        <Login />
+        {!isAuth ? (
+          <Link to="/login" className="sign__btn">
+            Войти
+          </Link>
+        ) : (
+          <button className="account__btn">
+            <Link to="/account">Аккаунт</Link>
+          </button>
+        )}
+
         <CardButton />
       </div>
     </div>

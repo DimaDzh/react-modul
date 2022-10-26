@@ -1,10 +1,8 @@
-import React from "react";
-import { UserOutlined } from "@ant-design/icons";
-import { Avatar, Image } from "antd";
+import { FC } from "react";
 import LogoSvg from "./LogoSvg";
 import "./logoStyle.scss";
 
-const Logo: React.FC = () => {
+const Logo: FC = () => {
   return (
     <>
       <div className="logo__section">

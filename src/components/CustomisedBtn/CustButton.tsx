@@ -2,19 +2,21 @@ import React, { FC } from "react";
 import { Button } from "antd";
 import { BaseButtonProps } from "antd/lib/button/button";
 
-interface ICustomButtnProps extends BaseButtonProps {
+interface ICustomBtnProps extends BaseButtonProps {
   children: React.ReactNode;
   styles?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
-const CustomButton: FC<ICustomButtnProps> = ({
+const CustomButton: FC<ICustomBtnProps> = ({
   children,
   type,
   shape,
   styles,
+  onClick,
 }) => (
   <>
-    <Button type={type} shape={shape} style={styles}>
+    <Button type={type} shape={shape} style={styles} onClick={onClick}>
       {children}
     </Button>
   </>

@@ -1,5 +1,7 @@
 $color1: #ff2e65;
 $containerWidth: 1100px;
+$containerWidth: 900px;
+
 .header {
   display: flex;
   flex-direction: column;
@@ -11,17 +13,45 @@ $containerWidth: 1100px;
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
+    @media (max-width: 900px) {
+      justify-content: center;
+      align-items: center;
+
+      .bage__span {
+        display: none;
+        visibility: hidden;
+      }
+      .call__btn {
+        display: none;
+        visibility: hidden;
+      }
+    }
+    @media (max-width: 600px) {
+      .phone__call {
+        justify-content: center;
+        text-align: center;
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 
   .down__header {
     display: flex;
-    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: baseline;
-    .menu__list {
+    justify-content: space-between;
+    @media (max-width: 900px) {
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+    }
+    .list {
       display: flex;
-
+      padding: 0;
       .list__item {
         display: flex;
         padding: 10px;
@@ -33,6 +63,27 @@ $containerWidth: 1100px;
       border: $color1;
       border-radius: 8px;
       padding: 7px 24px;
+      margin: 0 7px;
+    }
+  }
+  .sign__btn,
+  .account__btn {
+    color: #696f7a;
+    margin: 0 7px;
+  }
+  .sign__btn,
+  .account__btn:hover {
+    border: 1px solid #ff2e65;
+    border-radius: 8px;
+    padding: 7px 20px;
+    box-shadow: #ff2e65;
+  }
+  .account__btn {
+    background-color: #fff;
+    border: none;
+
+    a {
+      color: #000;
     }
   }
 }

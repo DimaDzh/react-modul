@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import { Image, Col, Divider, Row } from "antd";
 import "./salesStyle.scss";
 
-function SalesCard() {
+const SalesCard: FC = () => {
   return (
     <div className="card__section">
       <Row gutter={[16, 24]} justify="space-between" className="sales__wrapper">
@@ -68,6 +68,6 @@ function SalesCard() {
       </Row>
     </div>
   );
-}
+};
 
 export default SalesCard;

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import { mainColor1 } from "../../variables/mainColors/mainColor1";
 import "./backcallBtn.scss";
 
-function PhoneCall() {
+const PhoneCall: FC = () => {
   return (
     <div className="phone">
       <span className="phone__call">
@@ -12,6 +12,6 @@ function PhoneCall() {
       </span>
     </div>
   );
-}
+};
 
 export default PhoneCall;

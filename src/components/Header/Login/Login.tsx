@@ -1,13 +1,32 @@
-import React, { FC } from "react";
-import { Button } from "antd";
+import LogForm from "../Forms/LogForm";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { setUser } from "../../../store/slices/userSlice";
 import "./login.scss";
+import { useAppDispatch } from "../../../hooks/redux-hooks";
+import { useNavigate } from "react-router-dom";
 
-const Login: FC = () => {
-  return (
-    <Button type="link" className="login">
-      Войти
-    </Button>
-  );
+type Props = {};
+
+const Login = (props: Props) => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleLogin = (email: string, password: string) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.refreshToken,
+          })
+        );
+        navigate("/");
+      })
+      .catch(() => alert("Invalid user!"));
+  };
+  return <LogForm handleClick={handleLogin} title="Войти" />;
 };
 
 export default Login;

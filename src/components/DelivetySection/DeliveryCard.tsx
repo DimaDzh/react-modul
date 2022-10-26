@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Card } from "antd";
 import { CardProps } from "antd";
 
@@ -17,11 +17,7 @@ const deliveryCardStyle = {
   marginBottom: "10px",
 };
 
-export default function DeliveryCard({
-  icon,
-  children,
-  styles,
-}: DeliveryCardProps) {
+const DeliveryCard: FC<DeliveryCardProps> = ({ icon, children, styles }) => {
   return (
     <div className="del__card">
       <div className="badge">{icon}</div>
@@ -31,4 +27,6 @@ export default function DeliveryCard({
       </div>
     </div>
   );
-}
+};
+
+export default DeliveryCard;

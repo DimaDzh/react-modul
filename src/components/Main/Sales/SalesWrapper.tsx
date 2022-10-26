@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Typography, Button } from "antd";
 import { mainColor1 } from "../../variables/mainColors/mainColor1";
 import { custBtn } from "../../variables/mainColors/custBtn";
@@ -10,7 +10,7 @@ interface ISalesWrapperPorps {
 
 const { Title } = Typography;
 
-function SalesWrapper({ children }: ISalesWrapperPorps) {
+const SalesWrapper: FC<ISalesWrapperPorps> = ({ children }) => {
   return (
     <div className="sales__section">
       {" "}
@@ -23,6 +23,6 @@ function SalesWrapper({ children }: ISalesWrapperPorps) {
       </Button>
     </div>
   );
-}
+};
 
 export default SalesWrapper;

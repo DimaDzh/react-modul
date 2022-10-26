@@ -1,5 +1,5 @@
 import { BackTop, Row, Col } from "antd";
-import React from "react";
+import React, { FC } from "react";
 import Logo from "../Header/Logo/Logo";
 import "./footerStyle.scss";
 import FeadBackButton from "./FeadBackButton";
@@ -7,6 +7,7 @@ import FBIcon from "./assets/icons/image/FaceBookIcon";
 import ViberIcon from "./assets/icons/image/ViberIcon";
 import BackCallButton from "../Header/BackCallButton/BackCallButton";
 import PhoneCall from "../Header/BackCallButton/PhoneCall";
+import BackToTopBtn from "../CustomisedBtn/BackToTopBtn/BackToTopBtn";
 
 const style: React.CSSProperties = {
   height: 40,
@@ -19,11 +20,11 @@ const style: React.CSSProperties = {
   fontSize: 14,
 };
 
-const FooterSetion: React.FC = () => (
+const FooterSetion: FC = () => (
   <footer className="footer">
     <div style={{ height: "auto", padding: 8 }}>
       <BackTop>
-        <div style={style}>UP</div>
+        <BackToTopBtn />
       </BackTop>
     </div>
 

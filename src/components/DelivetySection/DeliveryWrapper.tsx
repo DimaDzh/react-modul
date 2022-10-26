@@ -35,12 +35,7 @@ export default function DeliveryWrapper({
       {" "}
       <div className="delivery__section">
         <h3 style={mainColor1}>{title}</h3>
-        <div className="cards__section">
-          <DeliveryCard></DeliveryCard>
-          <DeliveryCard></DeliveryCard>
-          <DeliveryCard></DeliveryCard>
-          <DeliveryCard></DeliveryCard>
-        </div>
+        <div className="cards__section"></div>
         <CityMap />
       </div>
     </>
