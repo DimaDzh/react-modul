@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import CartEmpty from "../../components/Cart/CartEmpty";
-import CartItem from "../../components/Cart/CartItem";
-import { selectCart } from "../../store/slices/useCartSlice";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
 import { useSelector } from "react-redux";
 import CartOrder from "../../components/Cart/CartOrder";
 

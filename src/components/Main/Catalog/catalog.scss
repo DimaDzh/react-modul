@@ -3,17 +3,4 @@
   flex-flow: column;
   flex-wrap: wrap;
   margin-bottom: 110px;
-  position: relative;
-}
-
-.catalog__wrapper::before {
-  position: absolute;
-  top: 50px;
-  left: 20px;
-  content: "";
-  background: url(./product-bage1.png);
-  width: 95px;
-  height: 200px;
-  transform: translate(-50%, -50%);
-  z-index: 10;
 }

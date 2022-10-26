@@ -25,7 +25,7 @@ const HomePage: FC<IHomePageProps> = ({}) => {
       <MainContainer>
         {isAuth && <SliderMain />}
         {isAuth && <Catalog />}
-        <Row justify="space-between" gutter={[16, 24]}>
+        <Row gutter={[16, 24]}>
           {products &&
             products.map((item: any) => {
               return (

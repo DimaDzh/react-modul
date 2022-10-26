@@ -4,6 +4,7 @@ import { setUser } from "../../../store/slices/userSlice";
 import "./login.scss";
 import { useAppDispatch } from "../../../hooks/redux-hooks";
 import { useNavigate } from "react-router-dom";
+import LogInForm from "../Forms/LogInForm";
 
 type Props = {};
 
@@ -26,7 +27,7 @@ const Login = (props: Props) => {
       })
       .catch(() => alert("Invalid user!"));
   };
-  return <LogForm handleClick={handleLogin} title="Войти" />;
+  return <LogInForm handleClick={handleLogin} title="Войти" />;
 };
 
 export default Login;

@@ -28,7 +28,7 @@ const CartItem: React.FC<CartItemProps> = ({ obj }) => {
           <img height="100" src={obj.image} alt="productImg" />
           <h5>{obj.title}</h5>
         </td>
-        <td className="cart-item__price">{obj.price} ₽</td>
+        <td className="cart-item__price">{obj.price} UAH</td>
         <td className="cart-item__amount">
           <div>
             <CartButtonMinus product={obj} amount={obj.amount} />

@@ -4,17 +4,12 @@ import { Button, Checkbox, Form, Input, Select } from "antd";
 
 const { Option } = Select;
 
-interface LogFormProps {
+interface LogInFormProps {
   title: string;
-  handleClick: (
-    email: string,
-    pass: string,
-    userName: string,
-    phone: number | string
-  ) => void;
+  handleClick: (email: string, pass: string) => void;
 }
 
-const LogForm: FC<LogFormProps> = ({ title, handleClick }) => {
+const LogInForm: FC<LogInFormProps> = ({ title, handleClick }) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [userName, setUserName] = useState("");
@@ -61,43 +56,11 @@ const LogForm: FC<LogFormProps> = ({ title, handleClick }) => {
         />
       </Form.Item>
 
-      <Form.Item
-        label="Name"
-        name="userName"
-        rules={[{ required: true, message: "Please input your name!" }]}
-      >
-        <Input
-          type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-      </Form.Item>
-      <Form.Item
-        label="Phone number"
-        name="phone"
-        rules={[{ required: true, message: "Please input your phone!" }]}
-      >
-        <Input
-          type="tel"
-          value={phone}
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          onChange={(e) => setPhone(e.target.value)}
-        />
-      </Form.Item>
-
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        wrapperCol={{ offset: 8, span: 16 }}
-      >
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button
           type="primary"
           htmlType="submit"
-          onClick={() => handleClick(email, pass, userName, phone)}
+          onClick={() => handleClick(email, pass)}
           style={custBtn}
         >
           {title}
@@ -107,4 +70,4 @@ const LogForm: FC<LogFormProps> = ({ title, handleClick }) => {
   );
 };
 
-export default LogForm;
+export default LogInForm;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "antd";
 
 type ClearButtonProps = {
   children: React.ReactNode;
@@ -7,9 +8,11 @@ type ClearButtonProps = {
 
 const ClearButton: React.FC<ClearButtonProps> = (props) => {
   return (
-    <button className="{styles.root}" onClick={() => props.handleClick()}>
-      <span>{props.children}</span>
-    </button>
+    <div>
+      <Button onClick={() => props.handleClick()} danger>
+        <span>{props.children}</span>
+      </Button>
+    </div>
   );
 };
 

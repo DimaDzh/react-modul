@@ -17,7 +17,6 @@ const SingUp: FC<SignUpProps> = ({ title }) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -25,6 +24,7 @@ const SingUp: FC<SignUpProps> = ({ title }) => {
             token: user.refreshToken,
           })
         );
+
         navigate("/account");
       })
       .catch(console.error);
@@ -32,7 +32,7 @@ const SingUp: FC<SignUpProps> = ({ title }) => {
 
   return (
     <>
-      <LogForm handleClick={handleRegister} title="Зарегестрироваться" />;
+      <LogForm handleClick={handleRegister} title="Зарегестрироваться" />
     </>
   );
 };

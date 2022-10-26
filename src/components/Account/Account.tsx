@@ -4,6 +4,7 @@ import FormDisabledDemo from "./AccForm";
 import { Link } from "react-router-dom";
 
 import "./style.scss";
+import FileUpLoader from "../FileUpLoader/FileUpLoader";
 
 interface iAccountProps {}
 
@@ -16,6 +17,7 @@ const Account: FC<iAccountProps> = (props) => {
           <img src="./assets/bonus_img1.png" alt="bonus" />
           <p>Бонусы появятся здесь после заказа</p>
         </div>
+        <FileUpLoader />
         <div className="actions">
           <Link to="/actions">Все акции</Link>
         </div>

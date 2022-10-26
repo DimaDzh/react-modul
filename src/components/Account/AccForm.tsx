@@ -10,7 +10,7 @@ import FormItem from "antd/es/form/FormItem";
 
 const FormDisabledDemo = () => {
   const dispatch = useAppDispatch();
-  const { email } = useAuth();
+  const { email, phone, userName } = useAuth();
   const navigate = useNavigate();
   const accInputRef = useRef(null);
   return (
@@ -21,15 +21,9 @@ const FormDisabledDemo = () => {
         layout="horizontal"
       >
         <h2>Личные данные</h2>
-        <Form.Item label="Имя">
-          <Input ref={accInputRef} />
-        </Form.Item>
-        <Form.Item label="Фамилия">
-          <Input />
-        </Form.Item>
-        <Form.Item label="Адресс">
-          <Input />
-        </Form.Item>
+        <div>{userName}</div>
+        <div>{phone}</div>
+        <div>{email}</div>
         <FormItem>
           <button
             onClick={() => {
