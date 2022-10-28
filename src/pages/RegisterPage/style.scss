@@ -1,4 +1,7 @@
+@import "../../components/assets//variables.scss";
+
 .registration__section {
+  @include Container;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
 }

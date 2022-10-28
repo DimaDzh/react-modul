@@ -11,6 +11,13 @@ import goodsReducer from "./slices/useProductsSlice";
 import products from "./slices/useProductsSlice";
 import cart, { ICartState } from "./slices/useCartSlice";
 import jwtDecode from "jwt-decode";
+import userDataSlice from "./slices/userDataSlice";
+
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
 export interface IUser {
   accessToken: string;
@@ -21,12 +28,6 @@ export interface IUser {
     isActivated: boolean;
     role: "USER" | "ADMIN";
   };
-}
-
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-  }
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -46,6 +47,7 @@ const persistedStateUser: IUser | null | string =
 
 const rootReducer = combineReducers({
   user: userReducer,
+  userData: userDataSlice,
   goods: goodsReducer,
   composeEnhancers,
   products,
@@ -66,6 +68,10 @@ export const store = configureStore({
       serializableCheck: false,
     }),
 });
+
+store.subscribe(() =>
+  localStorage.setItem("cart", JSON.stringify(store.getState().cart))
+);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

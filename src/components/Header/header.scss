@@ -1,18 +1,19 @@
-$color1: #ff2e65;
-$containerWidth: 1100px;
-$containerWidth: 900px;
+@import "../assets/variables.scss";
+@import "../assets/loginStyle.scss";
 
 .header {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 10px;
+  padding: 0.6rem 1rem;
   .top__header {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
+    column-gap: 6rem;
+
     @media (max-width: 900px) {
       justify-content: center;
       align-items: center;
@@ -38,20 +39,19 @@ $containerWidth: 900px;
 
   .down__header {
     display: flex;
+    position: relative;
     width: 100%;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
     @media (max-width: 900px) {
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
     }
     @media (max-width: 600px) {
     }
     .list {
       display: flex;
       padding: 0;
+      flex-wrap: wrap;
       .list__item {
         display: flex;
         padding: 10px;
@@ -66,24 +66,20 @@ $containerWidth: 900px;
       margin: 0 7px;
     }
   }
-  .sign__btn,
-  .account__btn {
-    color: #696f7a;
-    margin: 0 7px;
-  }
-  .sign__btn,
-  .account__btn:hover {
-    border: 1px solid #ff2e65;
-    border-radius: 8px;
-    padding: 7px 20px;
-    box-shadow: #ff2e65;
-  }
+
   .account__btn {
     background-color: #fff;
     border: none;
 
     a {
-      color: #000;
+      font-weight: 400;
+      transition: 0.3s ease-in-out;
+      color: #fff;
     }
+  }
+
+  .sign__btn,
+  .account__btn {
+    @include loginButton($color1);
   }
 }

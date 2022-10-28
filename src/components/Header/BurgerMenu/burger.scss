@@ -1,0 +1,46 @@
+@import "../../assets/variables.scss";
+
+.bm-burger-button {
+  position: relative;
+  display: flex;
+  width: 22px;
+  height: 16px;
+}
+
+.bm-burger-bars {
+  background: $color1;
+}
+
+// .bm-menu-wrap {
+//   visibility: hidden;
+//
+// }
+
+// .bm-menu-wrap.open {
+//   visibility: visible;
+// }
+
+.bm-cross-button {
+  height: 24px;
+  width: 245px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu {
+  width: 50%;
+  background: $bgcolor1;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-item-list {
+  padding: 0.8em;
+}
+
+.bm-item {
+  display: block;
+  color: #8c9ca6;
+}

@@ -1,7 +1,7 @@
 import { useAppSelector } from "./redux-hooks";
 
 export function useAuth() {
-  const { email, token, id, image, userName, phone } = useAppSelector(
+  const { email, token, id, userName, phone } = useAppSelector(
     (state) => state.user
   );
 
@@ -11,7 +11,6 @@ export function useAuth() {
     userName,
     token,
     id,
-    image,
     phone,
   };
 }

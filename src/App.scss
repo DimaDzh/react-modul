@@ -33,4 +33,6 @@ $containerWidth: 1100px;
 
 .container {
   max-width: $containerWidth;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

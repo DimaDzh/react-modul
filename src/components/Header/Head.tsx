@@ -11,16 +11,6 @@ import { useAuth } from "../../hooks/useAuth";
 const Head: React.FC = () => {
   const { isAuth, email } = useAuth();
 
-  const menuListData = [
-    "Меню",
-    "Супы",
-    "Антипасты",
-    "Напитки",
-    "Десерты",
-    "Бакалея",
-    "Контакты",
-  ];
-
   return (
     <div className="header">
       <div className="top__header">
@@ -33,28 +23,14 @@ const Head: React.FC = () => {
       </div>
 
       <div className="down__header">
-        <MenuList>
-          <ul className="list">
-            <li className="list__item">Menu</li>
-            <li className="list__item">Супы</li>
-            <li className="list__item">Антипасты</li>
-            <li className="list__item">Напитки</li>
-            <li className="list__item">Десерты</li>
-            <li className="list__item">
-              <Link to="/actions" style={{ color: "#000" }}>
-                Акции!
-              </Link>
-            </li>
-            <li className="list__item">Контакты</li>
-          </ul>
-        </MenuList>
+        <MenuList />
 
         {!isAuth ? (
-          <Link to="/login" className="sign__btn">
+          <Link to="/login" className="sign__btn login">
             Войти
           </Link>
         ) : (
-          <button className="account__btn">
+          <button className="account__btn login">
             <Link to="/account">Аккаунт</Link>
           </button>
         )}

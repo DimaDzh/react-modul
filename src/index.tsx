@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 
 import "./firebase.ts";
 
+import "./index.scss";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
